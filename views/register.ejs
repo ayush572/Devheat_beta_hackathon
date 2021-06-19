@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <img src="/images/VACS 9 LOGO.png" alt="" width="35" height="35" class="d-inline-block align-text-top">
         <a href="/" class="navbar-brand"><b>&nbsp; VACS 9</b></a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -26,8 +26,7 @@
             </div>
         </div>
     </nav>
-
-
+    <br><br><br>
 
     <img class="rounded mx-auto d-block mt-3" src="/images/VACS 9 LOGO.png" alt="" width="200" height="200">
     <div class="login d-flex align-items-center py-5">
@@ -37,60 +36,47 @@
                     <h3 class="login-heading mb-4">Register for new User!</h3>
                     <form action="/register" method="post">
                         <div class="form-label-group">
-                            <input name="number" type="tel" id="input" class="form-control" placeholder="+91 XXXXX XXXX" required=""
-                                autofocus="">
+                            <input name="number" type="tel" id="input" class="form-control" placeholder="+91 XXXXX XXXX"
+                                required="" autofocus="">
                             <label for="inputEmail">Mobile Number</label>
                         </div>
 
                         <div class="form-label-group">
-                            <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password"
-                                required="">
+                            <input name="password" type="password" id="inputPassword" class="form-control"
+                                placeholder="Password" required="">
                             <label for="inputPassword">Password</label>
                             <input name="repass" type="password" id="inputPassword" class="form-control"
                                 placeholder="Re-Enter Password" required="">
                             <label for="inputPassword">Re-Enter Password</label>
                         </div>
-
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input name="remember_me" type="checkbox" class="custom-control-input" id="customCheck1">
-                            <label class="custom-control-label" for="customCheck1">Remember password</label>
-                        </div>
-                        <button name="submit" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+                        <button name="submit"
+                            class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
                             type="submit">submit</button>
-                        <div class="text-center">
-
-                        </div>
                     </form>
                     <br>
                     <h5 class="login-heading mb-4">Click Here if you've already Registered</h5>
                     <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
-                        type="submit" onclick="location.href='/log-in'">Log-in</button>
+                        type="submit" onclick="location.href='/login'">Log-in</button>
                 </div>
             </div>
         </div>
     </div>
 
-
+    <br><br><br><br><br><br><br>
 
 
     <footer class="bg-dark text-center text-white fixed-bottom">
         <div class="container p-4 pb-0">
-          <section class="mb-4">
-            <a class="btn btn-outline-light btn-floating m-1" href="donate.html" role="button"
-              >Donate | Support</a>
-      
-            <a class="btn btn-outline-light btn-floating m-1" href="help.html" role="button"
-              >Help | Contact</a>
-      
-            <a class="btn btn-outline-light btn-floating m-1" href="connect.html" role="button"
-              >Connect</a>
-      
-            <a class="btn btn-outline-light btn-floating m-1" href="reach_us.html" role="button"
-              >Reach-Us</a>
-          </section>
+            <section class="mb-4">
+                <a class="btn btn-outline-light btn-floating m-1" href="/donate" role="button">Donate | Support</a>
+
+                <a class="btn btn-outline-light btn-floating m-1" href="/help" role="button">Help | Connect</a>
+
+                <a class="btn btn-outline-light btn-floating m-1" href="/reach_us" role="button">Reach-Us</a>
+            </section>
         </div>
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-          © 2021 Copyright: Team Binary Beasts
+            © 2021 Copyright: Team Binary Beasts
         </div>
     </footer>
 </body>

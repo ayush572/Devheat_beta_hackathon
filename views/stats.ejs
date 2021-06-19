@@ -1,52 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VACS 9 | Stats</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VACS 9 | STATS</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- DONUT CHART -->
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Status', 'Numbers'],
+          ['Both Dose', 48994708],
+          ['One Dose', 218956863],
+          ['Not Vaccinated', 1132048430],
+          
+        ]);
+
+        var options = {
+          title: 'Percentage of People Vaccinated',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+
+
+
+     <!-- PIE CHART -->
+
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+     <script type="text/javascript">
+       google.charts.load("current", {packages:["corechart"]});
+       google.charts.setOnLoadCallback(drawChart);
+       function drawChart() {
+         var data = google.visualization.arrayToDataTable([
+           ['Age Group', 'Numbers'],
+           ['18-44', 68997968],
+           ['45-60', 85086167],
+           ['Above 60', 64765494],
+
+         ]);
+ 
+         var options = {
+           title: 'Various Age Groups in Total Vaccinated',
+           is3D: true,
+         };
+ 
+         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+         chart.draw(data, options);
+       }
+     </script>
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+     <script type="text/javascript">
+       google.charts.load('current', {'packages':['bar']});
+       google.charts.setOnLoadCallback(drawChart);
+ 
+       function drawChart() {
+         var data = google.visualization.arrayToDataTable([
+           ['State', 'At least one dose'],
+           ['Andhra Pradesh', 32487466],
+           ['Arunachal Pradesh', 468875], 
+           ['Assam', 5210614],
+           ['Bihar', 33174680],
+           ['Chattisgarh', 6365119],
+           ['Delhi', 6434195],
+           ['Goa', 726686],
+           ['Gujrat', 21596263],
+           ['Haryana', 7247474],
+           ['Himachal Pradesh', 2793097],
+           ['Jharkhand', 5546776],
+           ['Karnataka', 38130798],
+           ['Kerela', 11996311],
+           ['Madhya Pradesh', 14994833],
+           ['Maharashtra', 27220156],
+           ['Manipur', 561047],
+           ['Meghalaya', 578098],
+           ['Mizoram', 421435],
+           ['Nagaland', 392226],
+           ['Odisha', 9656101],
+           ['Punjab', 5356568],
+           ['Rajasthan', 20630839],
+           ['Sikkim', 347391],
+           ['Tamil Nadu', 12148674],
+           ['Telangana', 8874911],
+           ['Tripura', 1860877],
+           ['Uttar Pradesh', 25149677],
+           ['Uttarakhand', 3515649],
+           ['West Bengal', 18645621]
+         ]);
+ 
+         var options = {
+           chart: {
+             title: 'Population Vaccinated per State',
+            //  subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+           }
+         };
+ 
+         var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+ 
+         chart.draw(data, google.charts.Bar.convertOptions(options));
+       }
+     </script>
 </head>
-
 <body>
-    <div class="bs-example">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <img src="/images/VACS 9 LOGO.png" alt="" width="35" height="35" class="d-inline-block align-text-top">
-            <a href="/" class="navbar-brand"><b>&nbsp; VACS 9</b></a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
-                    <a href="/" class="nav-item nav-link">Home</a>
-                    <a href="/register" class="nav-item nav-link" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">Register|Log-in</a>
-                    <a href="#" class="nav-link disabled">Stats</a>
-                </div>
+<div class="bs-example">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <img src="/images/VACS 9 LOGO.png" alt="" width="35" height="35" class="d-inline-block align-text-top">
+        <a href="/" class="navbar-brand"><b>&nbsp; VACS 9</b></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="/" class="nav-item nav-link">Home</a>
+                <a href="/register" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal">Register|Log-in</a>
+                <a href="#" class="nav-item nav-link disabled">Stats</a>
             </div>
-        </nav>
+        </div>
+    </nav>
 
+    <h1 style="text-align: center; font-size: 60px;">STATISTICS</h1>
+    <table>
 
+    <td><div id="donutchart" style="width: 700px; height: 600px; margin-left: 10%; margin-right: 20%;"></div></td>
+    <td><div id="piechart_3d" style="width: 700px; height: 600px; margin-left: 20%; margin-right: 30%;"></div></td>
 
+    </table>
+    <div id="columnchart_material" style="width: 95%; height: 500px;margin-left: 2.5%;"></div>
+    <br><br><br><br><br><br><br><br><br>
     <footer class="bg-dark text-center text-white fixed-bottom">
-            <div class="container p-4 pb-0">
-                <section class="mb-4">
-                    <a class="btn btn-outline-light btn-floating m-1" href="/donate" role="button">Donate |
-                        Support</a>
-
-                    <a class="btn btn-outline-light btn-floating m-1" href="/help" role="button">Help | Contact</a>
-
-                    <a class="btn btn-outline-light btn-floating m-1" href="/connect" role="button">Connect</a>
-
-                    <a class="btn btn-outline-light btn-floating m-1" href="/reach_us" role="button">Reach-Us</a>
-                </section>
-            </div>
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                © 2021 Copyright: Team Binary Beasts
-            </div>
-    </footer>
-</body>
-
-</html>
+        <div class="container p-4 pb-0">
+          <section class="mb-4">
+            <a class="btn btn-outline-light btn-floating m-1" href="/donate" role="button"
+              >Donate | Support</a>
+      
+            <a class="btn btn-outline-light btn-floating m-1" href="/help" role="button"
+              >Help | Connect</a>
+      
+            <a class="btn btn-outline-light btn-floating m-1" href="/reach_us" role="button"
+              >Reach-Us</a>
+          </section>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2021 Copyright: Team Binary Beasts
+        </div>
+      </footer>
